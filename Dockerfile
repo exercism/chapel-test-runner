@@ -1,7 +1,6 @@
-FROM alpine:3.10
+FROM chapel/chapel:1.29.0
 
-# install packages required to run the tests
-RUN apk add --no-cache jq coreutils
+RUN apt update && apt install -y jq
 
 WORKDIR /opt/test-runner
 COPY . .
