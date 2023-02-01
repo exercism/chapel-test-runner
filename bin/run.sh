@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Synopsis:
 # Run the test runner on a solution.
@@ -31,13 +31,18 @@ mkdir -p "${output_dir}"
 
 echo "${slug}: testing..."
 
+pushd "${solution_dir}" > /dev/null
+
 # Run the tests for the provided implementation file and redirect stdout and
 # stderr to capture it
 test_output=$(mason test 2>&1)
+exit_code=$?
+
+popd > /dev/null
 
 # Write the results.json file based on the exit code of the command that was 
 # just executed that tested the implementation file
-if [ $? -eq 0 ]; then
+if [ ${exit_code} -eq 0 ]; then
     jq -n '{version: 1, status: "pass"}' > ${results_file}
 else
     jq -n --arg output "${test_output}" '{version: 1, status: "fail", message: $output}' > ${results_file}
