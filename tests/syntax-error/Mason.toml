@@ -1,0 +1,5 @@
+[brick]
+name="example-syntax-error"
+version="0.1.0"
+chplVersion="1.32.0"
+type="application"
