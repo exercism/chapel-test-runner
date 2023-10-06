@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "status": "fail",
+  "message": "\n\n======================================================================\nFAIL tests.chpl: testYearDivisibleBy100NotDivisibleBy400InCommonYear()\n----------------------------------------------------------------------\nAssertionError: assertFalse failed. Given expression is True\n\n======================================================================\nFAIL tests.chpl: testYearDivisibleBy100ButNotBy3IsStillNotALeapYear()\n----------------------------------------------------------------------\nAssertionError: assertFalse failed. Given expression is True\n\n======================================================================\nFAIL tests.chpl: testYearDivisibleBy200NotDivisibleBy400InCommonYear()\n----------------------------------------------------------------------\nAssertionError: assertFalse failed. Given expression is True\n\n----------------------------------------------------------------------\nRan 9 tests\n\nFAILED (passed = 6 failures = 3 )"
+}
