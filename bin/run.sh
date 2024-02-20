@@ -45,8 +45,15 @@ popd > /dev/null
 if [ ${exit_code} -eq 0 ]; then
     jq -n '{version: 1, status: "pass"}' > ${results_file}
 else
+    echo "${test_output}" | grep -q 'compilation failed'
+    if [ $? -eq 1 ]; then
+        status="fail"
+    else
+        status="error"
+    fi
+
     sanitized_test_output=$(echo "${test_output}" | sed 's/Skipping registry update since no dependency found in manifest file.//')
-    jq -n --arg output "${sanitized_test_output}" '{version: 1, status: "fail", message: $output}' > ${results_file}
+    jq -n --arg status "${status}" --arg message "${sanitized_test_output}" '{version: 1, status: $status, message: $message}' > ${results_file}
 fi
 
 echo "${slug}: done"
