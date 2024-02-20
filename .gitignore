@@ -1,2 +1,3 @@
 tests/*/results.json
 tests/*/Mason.lock
+tests/*/target

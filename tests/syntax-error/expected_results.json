@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "status": "fail",
+  "status": "error",
   "message": "compilation failed for tests.chpl\n\n\n======================================================================\nERROR tests.chpl: tests\n----------------------------------------------------------------------\ntests.chpl failed to compile\nTry running 'mason test --show' for more details\n----------------------------------------------------------------------\nRan 1 test\n\nFAILED (errors = 1 )"
 }
