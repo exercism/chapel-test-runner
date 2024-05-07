@@ -1,4 +1,4 @@
-FROM chapel/chapel:1.33.0
+FROM chapel/chapel:2.0.0
 
 RUN apt update && apt install -y jq
 
