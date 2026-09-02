@@ -6,6 +6,7 @@ ADD --checksum=sha256:6690deb39aa1e737da3a245cdae0e10b250abf222a979b23a38e516caf
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y /tmp/chapel.deb jq && \
+    rm -f /usr/lib/llvm-19/lib/*.a && \
     rm -rf /tmp/chapel.deb /var/lib/apt/lists/*
 
 WORKDIR /opt/test-runner
